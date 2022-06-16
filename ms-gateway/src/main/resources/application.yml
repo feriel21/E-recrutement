@@ -1,0 +1,29 @@
+server:
+  port: 7777
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8888/eureka
+
+spring:
+  application:
+    name: ms-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: route1
+          predicates:
+            - Path=/demandeur/**
+          filters:
+            - RewritePath=/demandeur/(?<s>.*), /${s}
+          uri: lb://demandeur
+
+        - id: route2
+          predicates:
+            - Path=/employemanagement/**
+          filters:
+            - RewritePath=/employemanagement/(?<s>.*), /${s}
+          uri: lb://employemanagement

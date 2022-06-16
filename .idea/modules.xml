@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Eureka-server/Eureka-server.iml" filepath="$PROJECT_DIR$/Eureka-server/Eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demandeur/demandeur.iml" filepath="$PROJECT_DIR$/demandeur/demandeur.iml" />
+      <module fileurl="file://$PROJECT_DIR$/employemanagement/employemanagement.iml" filepath="$PROJECT_DIR$/employemanagement/employemanagement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms-gateway/ms-gateway.iml" filepath="$PROJECT_DIR$/ms-gateway/ms-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms-registration-finale/ms-registration-finale.iml" filepath="$PROJECT_DIR$/ms-registration-finale/ms-registration-finale.iml" />
+    </modules>
+  </component>
+</project>

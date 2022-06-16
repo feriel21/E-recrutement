@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="demandeur" />
+        <module name="employemanagement" />
+        <module name="Eureka-server" />
+        <module name="ms-gateway" />
+        <module name="ms-registration-finale" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demandeur" target="17" />
+      <module name="employemanagement" target="17" />
+      <module name="Eureka-server" target="17" />
+      <module name="ms-gateway" target="17" />
+      <module name="ms-registration-finale" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Eureka-server" options="-parameters" />
+      <module name="demandeur" options="-parameters" />
+      <module name="employemanagement" options="-parameters" />
+      <module name="ms-gateway" options="-parameters" />
+      <module name="ms-registration-finale" options="-parameters" />
+    </option>
+  </component>
+</project>
