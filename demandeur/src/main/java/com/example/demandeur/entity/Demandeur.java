@@ -18,6 +18,8 @@ public class Demandeur {
     private String prenom;
     private String email;
     private String password;
+
+
     @JsonIgnore
     @OneToOne
     private Cv cv;

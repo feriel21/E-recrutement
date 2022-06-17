@@ -1,11 +1,13 @@
 server:
   port: 7777
+
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8888/eureka
+
 
 spring:
   application:
@@ -23,7 +25,13 @@ spring:
 
         - id: route2
           predicates:
-            - Path=/employemanagement/**
+            - Path=/employe/**
           filters:
-            - RewritePath=/employemanagement/(?<s>.*), /${s}
+            - RewritePath=/employe/(?<s>.*), /${s}
           uri: lb://employemanagement
+        - id: route3
+          predicates:
+            - Path=/user/**
+          filters:
+            - RewritePath=/user/(?<s>.*), /${s}
+          uri: lb://ms-registration-finale

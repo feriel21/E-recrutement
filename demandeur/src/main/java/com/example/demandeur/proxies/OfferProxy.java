@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface OfferProxy {
 
     @GetMapping("/offers/search/findOfferByIdCondidture")
-    CollectionModel<Offer> getOffers(@RequestParam("idC") Long idC,
+    CollectionModel<Offer> getOffers(@RequestParam("idO") Long idC,
                                      @RequestParam("projection") String p);
 
 

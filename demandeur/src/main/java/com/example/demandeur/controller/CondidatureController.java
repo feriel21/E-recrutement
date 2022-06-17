@@ -18,7 +18,7 @@ public class CondidatureController {
     @Autowired
     OfferProxy offerProxy ;
 
-    @GetMapping("condidature/{id}")
+    @GetMapping("condidatures/{id}")
     Condidature getCondidatureWithOffers(@PathVariable("id") Long idC)
     {
         Condidature condidature=CondidatureRepo.findById(idC).get();
@@ -35,7 +35,7 @@ public class CondidatureController {
 
 
 
-    @PostMapping("/condidature")  //POST http://localhost:8081/api/condidature
+    @PostMapping("/ajouterCondidature")  //POST http://localhost:8081/api/condidature
     public Condidature createNewClient(@RequestBody Condidature condidature) {
         return CondidatureRepo.save(condidature);
     }
@@ -44,7 +44,7 @@ public class CondidatureController {
 
 
 
-    @DeleteMapping("/condidature/{id}")   //Delete http://localhost:8081/api/condidature/1
+    @DeleteMapping("/deleteCondidature/{id}")   //Delete http://localhost:8081/api/condidature/1
     public String DeleteCondidature(@PathVariable(value = "id") Long idCondidature){
         if (CondidatureRepo.findById(idCondidature).isPresent()){
            CondidatureRepo.deleteById(idCondidature);

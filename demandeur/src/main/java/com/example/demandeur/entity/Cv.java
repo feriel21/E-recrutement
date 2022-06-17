@@ -13,7 +13,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="Cv")
+
 public class Cv {
 
     @Id
@@ -46,12 +46,14 @@ public class Cv {
     private  boolean Handicap;
 
     @Enumerated(EnumType.STRING)
-    private Sexe SituationMilitaire;
+    private SituationMilitaire SituationMilitaire;
 
     private String adresse;
 
+
+
     @JsonIgnore
-    @ManyToMany(mappedBy = "cv", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "cv", fetch = FetchType.EAGER)
     private Collection<Diplomes> Diplomes;
     @JsonIgnore
     @ManyToMany(mappedBy = "cv")
@@ -71,4 +73,6 @@ public class Cv {
     @JsonIgnore
     @OneToOne
     private Demandeur Demandeur;
+
+
 }

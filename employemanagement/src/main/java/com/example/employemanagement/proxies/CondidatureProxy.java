@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @FeignClient(name="demandeur")
-@LoadBalancerClient(name="demandeur",configuration = LBConfiguration.class)
+@LoadBalancerClient(name="demandeur")
 
 public interface CondidatureProxy {
 
 
-    @GetMapping("/condidature/{id}")
+    @GetMapping("/condidatures/{id}")
     Condidature getCondidature(@PathVariable("id") Long idC);
 
 }

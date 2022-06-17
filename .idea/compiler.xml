@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
         <module name="demandeur" />
         <module name="employemanagement" />
         <module name="Eureka-server" />
@@ -15,6 +16,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="config-server" target="17" />
       <module name="demandeur" target="17" />
       <module name="employemanagement" target="17" />
       <module name="Eureka-server" target="17" />
@@ -25,6 +27,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Eureka-server" options="-parameters" />
+      <module name="config-server" options="-parameters" />
       <module name="demandeur" options="-parameters" />
       <module name="employemanagement" options="-parameters" />
       <module name="ms-gateway" options="-parameters" />

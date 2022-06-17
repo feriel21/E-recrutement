@@ -29,7 +29,7 @@ public class EmployeController {
         return employeRepo.findEmployeByIdEmploye(idEmploye) ;
     }
 
-    @GetMapping("/employe/{nom}") //GET http://localhost:8090/employe-api/employe/ent1
+    @GetMapping("/{nom}") //GET http://localhost:8090/employe-api/employe/ent1
     public Employe getEmployeByName(@PathVariable("nom") String nom){
         return employeRepo.findEmployeByNom(nom) ;
     }
@@ -40,7 +40,7 @@ public class EmployeController {
         return employeRepo.save(employe);
     }
     //Put http://localhost:8090/employe-api/employe/ent1
-    @PutMapping("/employe/{id}")
+    @PutMapping("/employeUpdate/{id}")
     public Employe updateEmploye(@PathVariable(value = "id") Long id,
                                @RequestBody Employe employe) {
         if (employeRepo.findById(id).isPresent()) {

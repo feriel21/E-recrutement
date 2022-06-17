@@ -1,5 +1,6 @@
 package com.example.employemanagement.controller;
 
+import com.example.employemanagement.entities.Employe;
 import com.example.employemanagement.entities.Metier;
 import com.example.employemanagement.entities.Offer;
 import com.example.employemanagement.proxies.CondidatureProxy;
@@ -47,6 +48,8 @@ public class OfferController {
     }
 
 
+  /*  @GetMapping("/offer/all")
+    public List<Offer> getOffers(){return offerRepo.findAll() ; }*/
 
 
 
