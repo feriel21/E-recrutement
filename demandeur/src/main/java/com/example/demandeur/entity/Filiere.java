@@ -1,13 +1,19 @@
 package com.example.demandeur.entity;
 
-import javax.persistence.*;
-@Entity
-public class Filiere {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idFiliere;
-    @Column(nullable = false, length = 20)
-    private String libelle;
-    @OneToOne
-    private Diplomes diplome;
-}
+
+
+
+
+public enum Filiere {
+    Économie_gestion ,
+    Droit ,   sciences_politiques ,
+    Sciences ,
+    Sciences_humaines  ,  sociales ,
+    ingénieur ,
+            Médecine ,
+
+    Théologie ,
+    informatique ,
+    developpement
+
+    }

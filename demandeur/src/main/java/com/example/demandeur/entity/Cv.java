@@ -33,6 +33,8 @@ public class Cv {
 
     @Temporal(TemporalType.DATE)
     private Date dateNaissance;
+    @Enumerated(EnumType.STRING)
+    private Competence competence;
 
     @Enumerated(EnumType.STRING)
     private Sexe sexe;
@@ -55,13 +57,11 @@ public class Cv {
     @JsonIgnore
     @ManyToMany(mappedBy = "cv", fetch = FetchType.EAGER)
     private Collection<Diplomes> Diplomes;
-    @JsonIgnore
-    @ManyToMany(mappedBy = "cv")
-    private Collection<Langues> Langues;
 
-    @JsonIgnore
-    @ManyToMany(mappedBy = "cv")
-    private Collection<NiveauxQualification> Niveaux;
+    private Langues Langues;
+
+
+    private NiveauxQualification Niveaux;
 
     @JsonIgnore
     @ManyToMany(mappedBy = "cv")

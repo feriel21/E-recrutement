@@ -1,15 +1,13 @@
 package com.example.demandeur.entity;
 
+import lombok.Data;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class Metier {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idMetier;
-    @Column(nullable = false, length = 20)
-    private String libelle;
+public enum Metier {
+    Developpeur , chercheur , commercans , Manager  ,Electricien
 
 }

@@ -45,7 +45,7 @@ public class CvController {
 
     @GetMapping("/{id}")
     public Cv getCv(@PathVariable("id") Long idCv){
-        return cvRepo.findEmployeByIdCv(idCv) ;
+        return cvRepo.findCvByIdCv(idCv) ;
     }
 
     @DeleteMapping("/deleteCv/{id}")   //Delete http://localhost:8090/employe-api/deleteEmploye/1

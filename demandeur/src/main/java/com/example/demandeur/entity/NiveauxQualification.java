@@ -1,16 +1,13 @@
 package com.example.demandeur.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Collection;
 
-@Entity
-public class NiveauxQualification {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idNiveauxQ;
-    @Column(nullable = false, length = 20)
-    private String libelle;
-    @ManyToMany
-    private Collection<Cv> cv;
+
+public  enum NiveauxQualification {
+    niveau1 , niveau2 ,niveau3 ,niveau4 ,niveau5 ,niveau6 ,niveau7
+
 
 }
