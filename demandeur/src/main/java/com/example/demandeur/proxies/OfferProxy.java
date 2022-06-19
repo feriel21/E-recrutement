@@ -17,6 +17,9 @@ public interface OfferProxy {
                                      @RequestParam("projection") String p);
 
 
+    @GetMapping("/offers/search/findOfferByIdDiplome")
+    CollectionModel<Offer> getOffers(@RequestParam("idO") Long idD);
+
 
 
 }

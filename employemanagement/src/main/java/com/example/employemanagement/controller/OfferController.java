@@ -1,6 +1,5 @@
 package com.example.employemanagement.controller;
 
-import com.example.employemanagement.entities.Employe;
 import com.example.employemanagement.entities.Metier;
 import com.example.employemanagement.entities.Offer;
 import com.example.employemanagement.proxies.CondidatureProxy;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("offer-api")
+@RequestMapping("/offer-api")
 public class OfferController {
     private final Logger log = LoggerFactory.getLogger(OfferController.class);
     @Autowired
@@ -25,9 +24,11 @@ public class OfferController {
 
 
 
+
+
    @GetMapping("offer/{id}/condidature")
     Offer getOfferWithCondidature(@PathVariable("id") Long idO)    {
-        Offer offer =offerRepo.findById(idO).get();
+        Offer offer =offerRepo.findById(idO).get() ;
         offer.setCondidature(condidatureProxy.getCondidature(offer.getIdCondidature()));
         return offer;
     }
@@ -35,8 +36,12 @@ public class OfferController {
 
 
 
+
+
+
    @GetMapping("offer/condidature")
-    List<Offer> getOffers()
+
+   List<Offer> getOffers()
     {
         List<Offer> offers=offerRepo.findAll();
 
@@ -48,16 +53,39 @@ public class OfferController {
     }
 
 
+
+
+
+    @GetMapping("offer/{id}/diplomes")
+    Offer getOfferWithiplomes(@PathVariable("id") Long idO)    {
+        Offer offer =offerRepo.findById(idO).get();
+        offer.setCondidature(condidatureProxy.getDiplomes(offer.getIdDiplome()));
+        return offer;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /*  @GetMapping("/offer/all")
     public List<Offer> getOffers(){return offerRepo.findAll() ; }*/
 
 
 
-    @GetMapping("/offer/{metier}") //GET http://localhost:8090/employe-api/employe/ent1
+   /* @GetMapping("/offer/{metier}") //GET http://localhost:8090/employe-api/employe/ent1
     public Offer getOfferByMetier(@PathVariable("metier") Metier metier){
 
         return offerRepo.findOfferByMetier(metier) ;
-    }
+    }*/
 
 
     //POST http://localhost:8090/offer-api/ajouterOffer

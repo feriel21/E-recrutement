@@ -6,20 +6,28 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Entity @NoArgsConstructor @AllArgsConstructor @Data
-public class Condidature  {
+public class Condidature {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCondidature;
 
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false)
     private String libelle;
-    @ManyToMany
-    private Collection<Cv> cv;
+   /* @ManyToMany
+    private Collection<Cv> cv;*/
+   @ManyToOne
+   private Cv cv;
+
+
     @Transient
-    private Collection<Offer> offers  ;
+private List<Offer> offers ;
+
+
 
 
 }

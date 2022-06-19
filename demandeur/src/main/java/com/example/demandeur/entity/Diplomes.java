@@ -8,20 +8,20 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
 @Entity
-@Table(name = "Diplomes")
+@Table(name = "Diplome")
 @Data @AllArgsConstructor @NoArgsConstructor
 public class Diplomes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idDiplome;
     private String lieu;
-    @Temporal(TemporalType.DATE)
     private Date dateObtention;
 
-    @ManyToMany
-      private Collection<Cv> cv;
+    @ManyToOne
+    private Cv cv;
 
-   @OneToOne(mappedBy = "diplome" ,   cascade = CascadeType.PERSIST)
+
+    @OneToOne(mappedBy = "diplome")
     private Specialite specialite;
 
     @OneToOne(mappedBy = "diplome")

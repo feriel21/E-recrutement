@@ -4,23 +4,23 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Table(name="Cv")
 public class Cv {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCv;
-    private String nom ;
-    private String prenom ;
 
     @Column(unique = true,length = 10)
     private int NumTel;
@@ -33,8 +33,6 @@ public class Cv {
 
     @Temporal(TemporalType.DATE)
     private Date dateNaissance;
-    @Enumerated(EnumType.STRING)
-    private Competence competence;
 
     @Enumerated(EnumType.STRING)
     private Sexe sexe;
@@ -48,31 +46,50 @@ public class Cv {
     private  boolean Handicap;
 
     @Enumerated(EnumType.STRING)
-    private SituationMilitaire SituationMilitaire;
+    private Sexe SituationMilitaire;
 
     private String adresse;
 
+   /* @JsonIgnore
+    @ManyToMany(mappedBy = "cv", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Collection<Diplomes> Diplomes;*/
 
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "cv", fetch = FetchType.EAGER)
-    private Collection<Diplomes> Diplomes;
+    @OneToMany(mappedBy = "cv",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private Collection<Diplomes> diplomes;
 
-    private Langues Langues;
-
-
-    private NiveauxQualification Niveaux;
+   /* @JsonIgnore
+    @ManyToMany(mappedBy = "cv")
+    private Collection<Langues> Langues;*/
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "cv")
-    private Collection<FormationPro> FormationPro;
+    @OneToMany(mappedBy = "cv",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private Collection<Langues> langues;
 
+   /* @JsonIgnore
     @ManyToMany(mappedBy = "cv")
-    private Collection<Condidature> condidature;
+    private Collection<NiveauxQualification> Niveaux;*/
+   @JsonIgnore
+   @OneToMany(mappedBy = "cv",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+   private Collection<NiveauxQualification> niveauxQualifications;
+
+    /*@JsonIgnore
+    @ManyToMany(mappedBy = "cv")
+    private Collection<FormationPro> FormationPro;*/
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "cv",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private Collection<FormationPro> formationPros ;
+
+    /*@ManyToMany(mappedBy = "cv")
+    private Collection<Condidature> condidature;*/
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "cv",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private Collection<Condidature> condidatures;
 
     @JsonIgnore
     @OneToOne
     private Demandeur Demandeur;
-
-
 }

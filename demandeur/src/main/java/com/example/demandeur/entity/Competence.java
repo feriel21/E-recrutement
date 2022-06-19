@@ -1,17 +1,23 @@
 package com.example.demandeur.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public enum Competence {
-    springBoot ,
-    uxdesign ,
-    HTML5 ,
-    CSS3 ,
-    communication,
-    TEAM_work ,
-    java ,
-    javascrript ,
-    ANALYSIS ,
-    PROBLEM_SOLVING
+import javax.persistence.*;
 
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Competence {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idCompetence;
+
+    @Column(nullable = false, length = 20)
+    private String libelle;
+    @Column(nullable = false, length = 20)
+    private String description;
 
 }

@@ -1,20 +1,22 @@
-package com.example.demandeur.entity;
+package com.example.employemanagement.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-@Entity
+
 @Data
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Specialite {
+public class Agence {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idSpecialite;
-    @Column(nullable = false, length = 20)
-    private String libelle;
-    @OneToOne
-    private Diplomes diplome;
+    private Long idAgence;
+
+    private String agence;
+
+
+
 }

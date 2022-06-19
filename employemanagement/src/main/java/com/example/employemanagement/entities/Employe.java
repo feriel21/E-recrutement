@@ -1,5 +1,6 @@
 package com.example.employemanagement.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,8 +22,8 @@ public class Employe {
     private String nom;
 
 
-
-    private String agence ;
+   @Transient
+    private Agence agence;
 
 
     private Long numRegistreComerciale ;
@@ -42,9 +43,9 @@ public class Employe {
 
 
     private String statusJuridique ;
+   @Transient
 
-
-    private String brancheActivity ;
+    private BrancheActivity brancheActivity ;
 
 
     private String respRecrutement ;

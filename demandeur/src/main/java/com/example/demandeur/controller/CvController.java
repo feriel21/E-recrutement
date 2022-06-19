@@ -1,18 +1,18 @@
 package com.example.demandeur.controller;
 
 
+
 import com.example.demandeur.entity.Cv;
 import com.example.demandeur.repo.CvRepo;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+
 
 @RestController
-@RequestMapping("api2")
+@RequestMapping("/api2")
 
 public class CvController {
 
@@ -69,18 +69,5 @@ public class CvController {
 
 
 
-    // @GetMapping(value = "/{id}/exportpdf", produces = MediaType.APPLICATION_PDF_VALUE)
-    //public ResponseEntity<InputStreamResource> employeeReports(HttpServletResponse response) throws IOException {
-
-      //  List<Cv> allEmployees = CvRepo.findAll();
-
-    //    ByteArrayInputStream bis = ExportPdf.CvReport(allEmployees);
-    //    HttpHeaders headers = new HttpHeaders();
-
-     //   headers.add("Content-Disposition", "attachment;filename=Cv.pdf");
-
-     //   return ResponseEntity.ok().headers(headers).contentType(MediaType.APPLICATION_PDF)
-        //        .body(new InputStreamResource(bis));
-    //}
 
 

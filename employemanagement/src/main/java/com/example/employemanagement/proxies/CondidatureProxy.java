@@ -18,6 +18,14 @@ public interface CondidatureProxy {
     @GetMapping("/condidatures/{id}")
     Condidature getCondidature(@PathVariable("id") Long idC);
 
+
+    @GetMapping("/diplomes/{id}")
+    Condidature getDiplomes(@PathVariable("id") Long idD);
+
+
+
+
+
 }
 
 

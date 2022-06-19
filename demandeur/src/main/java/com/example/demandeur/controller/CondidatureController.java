@@ -36,7 +36,7 @@ public class CondidatureController {
 
 
     @PostMapping("/ajouterCondidature")  //POST http://localhost:8081/api/condidature
-    public Condidature createNewClient(@RequestBody Condidature condidature) {
+    public Condidature createNewCondidature(@RequestBody Condidature condidature) {
         return CondidatureRepo.save(condidature);
     }
 

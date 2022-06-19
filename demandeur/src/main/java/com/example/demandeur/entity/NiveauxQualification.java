@@ -1,13 +1,23 @@
 package com.example.demandeur.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Collection;
 
-
-public  enum NiveauxQualification {
-    niveau1 , niveau2 ,niveau3 ,niveau4 ,niveau5 ,niveau6 ,niveau7
-
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class NiveauxQualification {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idNiveauxQ;
+    @Column(nullable = false, length = 20)
+    private String libelle;
+    @ManyToOne
+    private Cv cv;
 
 }
